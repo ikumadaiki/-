@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
-  
+
   # ↓フォロー機能
   # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -21,6 +21,9 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :follower
   # 与フォロー関係を通じて参照→自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
+
+  has_many :chats, dependent: :destroy
+  has_many :user_rooms, dependent: :destroy
 
   def follow(user_id)
     relationships.create(followed_id: user_id)
@@ -34,7 +37,7 @@ class User < ApplicationRecord
     followings.include?(user)
   end
   # ↑フォロー機能
-  
+
   # ↓検索機能
   def self.search_for(content, method)
     if method == 'perfect'
@@ -48,5 +51,5 @@ class User < ApplicationRecord
     end
   end
   # ↑検索機能
-  
+
 end
