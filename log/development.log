@@ -11416,3 +11416,1436 @@ ActionView::Template::Error (undefined method `chats' for nil:NilClass):
     2: $('input[type=text]').val("");
   
 app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb___2581322370334637418_53942620'
+Started GET "/users/3" for 58.93.235.150 at 2021-11-19 15:52:17 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/users/_info.html.erb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/users/_info.html.erb:17
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 5], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  Rendered users/_info.html.erb (385.2ms)
+  Rendered books/_form.html.erb (9.6ms)
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/books/_index.html.erb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 8]]
+  ↳ app/views/books/_index.html.erb:19
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 8], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/models/book.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 8]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:2
+  Rendered favorites/_favorite-btn.html.erb (9.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_comments" WHERE "book_comments"."book_id" = ?[0m  [["book_id", 9]]
+  ↳ app/views/books/_index.html.erb:19
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."book_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["book_id", 9], ["user_id", 5], ["LIMIT", 1]]
+  ↳ app/models/book.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."book_id" = ?[0m  [["book_id", 9]]
+  ↳ app/views/favorites/_favorite-btn.html.erb:4
+  Rendered favorites/_favorite-btn.html.erb (2.8ms)
+  Rendered books/_index.html.erb (32.6ms)
+  Rendered users/show.html.erb within layouts/application (432.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 673ms (Views: 623.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/chats/3" for 58.93.235.150 at 2021-11-19 15:52:20 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.1ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?) LIMIT ?[0m  [["user_id", 3], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (3.1ms)
+  Rendered chats/show.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_search.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 237ms (Views: 187.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:52:23 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3J8Zu0idnIZa5gyL-nBkiDWJApYA2Yc7U9KZBWE28uHMebpqOSupRiCNLkluMzMdxYoiYrT7nnOoa9n5VPauvw", "chat"=>{"message"=>"eag", "room_id"=>""}, "commit"=>"SEND"}
+Unpermitted parameter: :room_id
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:21
+  Rendering chats/create.js.erb
+  Rendered chats/create.js.erb (3.7ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `chats' for nil:NilClass):
+    1: $('.message').html("<%= j(render "message", chats: @chat.room.chats) %>");
+    2: $('input[type=text]').val("");
+  
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__1773016366602380568_69859537672360'
+Started GET "/chats/3" for 58.93.235.150 at 2021-11-19 15:53:07 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.1ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?) LIMIT ?[0m  [["user_id", 3], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (2.9ms)
+  Rendered chats/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 217ms (Views: 162.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:53:09 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"okwj78C7sRHbyROdgwV6iJuopmGBHtuJiaRnfeS4e_C8SCK9vSwcyMF6zoVASewYTPq4xBo8kgyd-fK9gkvTlg", "chat"=>{"message"=>"rgr", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/create.js.erb (3.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `chats' for nil:NilClass):
+    1: $('.message').html("<%= j(render "message", chats: @chat.room.chats) %>");
+    2: $('input[type=text]').val("");
+  
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__1773016366602380568_69859530261900'
+Started GET "/chats/3" for 58.93.235.150 at 2021-11-19 15:54:01 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (1.0ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?) LIMIT ?[0m  [["user_id", 3], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (3.5ms)
+  Rendered chats/show.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_search.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 100.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:54:03 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LeVFFg5BdC8JJoRieDy2a_0nJAgbYI-zLdoJJRkIYl0z4UREc9bZ9hOVWXq7cCD7KnU6rYBCxjY5h5zlf_vKOw", "chat"=>{"message"=>"gr", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/create.js.erb (0.4ms)
+Completed 200 OK in 17ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:54:08 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LeVFFg5BdC8JJoRieDy2a_0nJAgbYI-zLdoJJRkIYl0z4UREc9bZ9hOVWXq7cCD7KnU6rYBCxjY5h5zlf_vKOw", "chat"=>{"message"=>"hte", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/create.js.erb (0.4ms)
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chats/3" for 58.93.235.150 at 2021-11-19 15:54:16 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?) LIMIT ?[0m  [["user_id", 3], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.7ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (2.6ms)
+  Rendered chats/show.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_search.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 129ms (Views: 117.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:54:20 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:8
+  [1m[36mRoom Create (1.2ms)[0m  [1m[32mINSERT INTO "rooms" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-11-19 15:54:20.060175"], ["updated_at", "2021-11-19 15:54:20.060175"]]
+  ↳ app/controllers/chats_controller.rb:8
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:9
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:9
+  [1m[36mUserRoom Create (1.0ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["room_id", 4], ["created_at", "2021-11-19 15:54:20.072291"], ["updated_at", "2021-11-19 15:54:20.072291"]]
+  ↳ app/controllers/chats_controller.rb:9
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:10
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:10
+  [1m[36mUserRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "user_rooms" ("user_id", "room_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["room_id", 4], ["created_at", "2021-11-19 15:54:20.082401"], ["updated_at", "2021-11-19 15:54:20.082401"]]
+  ↳ app/controllers/chats_controller.rb:10
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:10
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (1.6ms)
+  Rendered chats/show.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 141ms (Views: 100.7ms | ActiveRecord: 16.0ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:54:24 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vM2okqurUuwSHb5NeZpEu_Lwv8PbUtwqD0lr5CdzCQSiyanA1jz_NQiuY1W61tIrJaKhZkBwla8bFP4kQYChYg", "chat"=>{"message"=>"tetr", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/create.js.erb (0.4ms)
+Completed 200 OK in 17ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:54:27 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (4.7ms)
+  Rendered chats/show.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_search.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 110ms (Views: 99.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:56:32 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"_Hi8PlA0JhD5ej2xNLXgV_wis-DpsgvM2JT1wjkNgUnifL1sLaOLyePJ4Kn3-XbHK3CtRXKQQknMyWACX_4pLw", "chat"=>{"message"=>"yr", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (3.4ms)
+  Rendered chats/create.js.erb (7.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___1277062761652695211_43870500'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__1773016366602380568_41827240'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:58:10 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"_Hi8PlA0JhD5ej2xNLXgV_wis-DpsgvM2JT1wjkNgUnifL1sLaOLyePJ4Kn3-XbHK3CtRXKQQknMyWACX_4pLw", "chat"=>{"message"=>"yr", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (3.1ms)
+  Rendered chats/create.js.erb (6.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___1277062761652695211_69859544016000'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__1773016366602380568_69859543693720'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:58:13 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (2.7ms)
+  Rendered chats/show.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (10.0ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 125ms (Views: 114.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:58:44 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Chat Load (0.0ms)[0m  [1m[34mSELECT  "chats".* FROM "chats" WHERE "chats"."room_id" = ? LIMIT ?[0m  [["room_id", 4], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered chats/show.html.erb within layouts/application (404.2ms)
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `chats' for #<#<Class:0x00007f12e2ab6ac0>:0x00007f12e207a5e8>
+Did you mean?  @chats
+               @chat):
+    1: <h1><%=@user.name %>さんとのチャット</h1>
+    2: <div class='message'>
+    3: <% chats.each do |chat| %>
+    4: <p><%= chat.message %></p>
+    5: <% end %>
+    6: </div>
+  
+app/views/chats/show.html.erb:3:in `_app_views_chats_show_html_erb___3903248575440238276_69859539146600'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:58:52 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_search.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 174ms (Views: 159.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:58:56 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"-PGFDGKRhd2jI6iEyB1BGtV4fdF-SJuvICYz7wUQM2nm9YReHwYoBLmQdZwLUdeKAipjdOVq0io0e6YvY-ObDw", "chat"=>{"message"=>"rsa", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (3.6ms)
+  Rendered chats/create.js.erb (7.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___1277062761652695211_69859544772980'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__1773016366602380568_69859544746820'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:59:20 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 102ms (Views: 90.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:59:23 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3bc5moceztJ5dLRdRsh2KhvpXu594YkHMn5f8voMRynDszjI-oljC2PHaUWFhOC6zLtAS-bDwIImI8oynP_vTw", "chat"=>{"message"=>"ge", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (3.1ms)
+  Rendered chats/create.js.erb (6.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___1277062761652695211_69859545402340'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__1773016366602380568_69859545335240'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 15:59:43 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 109ms (Views: 98.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 15:59:48 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1aXYq2Bp_6MIGWMysTZs5g4AUBeJc2LPbiIQYWMB1h7Lodn5Hf5SehKqvipyevp22VJOshJRK0p6f4WhBfJ-eA", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 406 Not Acceptable in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ChatsController#create is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.2.5) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (5.2.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.5) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.5) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.5) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.5) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.5) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.5) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.5) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.5) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.5) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.5) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.5) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.5) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.5) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.5) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.5) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:00:25 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1aXYq2Bp_6MIGWMysTZs5g4AUBeJc2LPbiIQYWMB1h7Lodn5Hf5SehKqvipyevp22VJOshJRK0p6f4WhBfJ-eA", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 1.9ms)
+
+
+  
+NameError (undefined local variable or method `referer' for #<ChatsController:0x00007f12e8531b08>):
+  
+app/controllers/chats_controller.rb:21:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:00:50 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1aXYq2Bp_6MIGWMysTZs5g4AUBeJc2LPbiIQYWMB1h7Lodn5Hf5SehKqvipyevp22VJOshJRK0p6f4WhBfJ-eA", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Redirected to https://6200e0b368d047f89b9ec01ac369f667.vfs.cloud9.us-east-1.amazonaws.com/chats/4
+Completed 302 Found in 47ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:00:51 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.1ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 184ms (Views: 153.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:00:53 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rLsxry8EQwVX8YpSkOKd6kfCO9-UGdC_nSj4dJqQC8yyvzD9UpPu3E1CV0pTrgt6kJAleg87mTqJdW20_GOjqg", "chat"=>{"message"=>"rg", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Redirected to https://6200e0b368d047f89b9ec01ac369f667.vfs.cloud9.us-east-1.amazonaws.com/chats/4
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:00:54 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 103ms (Views: 90.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:01:04 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.1ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.2ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 166ms (Views: 117.1ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:01:07 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:02:42 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+Completed 404 Not Found in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/chats_controller.rb:19:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:03:34 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/chats_controller.rb:19:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:07:01 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 34ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:07:33 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:07:39 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:07:54 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 63ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:08:56 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:10:06 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 37ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:10:23 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 81ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:10:52 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 51ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:11:28 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+Unpermitted parameter: :room_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 36ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:11:56 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 31ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:12:41 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 64ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:14:31 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:15:50 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 39ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:16:03 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbAALLeaxmyrwIXVb-RIHZLBWMdv0RB5szcK_puNQxFPtAF-yg1rtbFzWM2sqN6NRZNGYvTzWfynap8-_X7rdw", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:16:12 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_search.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 683ms (Views: 657.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:16:15 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Az5bwe7fQHqiGlIceDSncFwNxHsJufkm8-YO_cRDGF8dOlqTk0jto7ipjwS7eDHgi1_a3pKbsKPnu5s9orCwOQ", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 10ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:17:40 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Az5bwe7fQHqiGlIceDSncFwNxHsJufkm8-YO_cRDGF8dOlqTk0jto7ipjwS7eDHgi1_a3pKbsKPnu5s9orCwOQ", "chat"=>{"message"=>"a", "room_id"=>""}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+Completed 422 Unprocessable Entity in 64ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Room must exist):
+  
+app/controllers/chats_controller.rb:20:in `create'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:18:26 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.2ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/show.html.erb:3
+  Rendered chats/show.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_header.html.erb (21.1ms)
+  Rendered layouts/_search.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 636ms (Views: 587.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:18:35 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"-L201TSA0qT7JwkAbZODInIJiaLNPq9HpKNTz7CmPAPmubWHSRd_feGU1Biu3xWypVuXB1Yc5sKw_sYP1lWUZQ", "chat"=>{"message"=>"g", "room_id"=>"4"}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mChat Create (1.5ms)[0m  [1m[32mINSERT INTO "chats" ("user_id", "message", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["message", "g"], ["created_at", "2021-11-19 16:18:35.735527"], ["updated_at", "2021-11-19 16:18:35.735527"], ["room_id", 4]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (3.1ms)
+  Rendered chats/create.js.erb (6.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 7.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___3710307094469724945_69818451735300'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__2650792218327551660_69818451684720'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:19:31 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  Rendered chats/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial chats/_messages, application/_messages with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ec2-user/environment/kadai7a/app/views"
+  * "/home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views"
+):
+    1: <h1><%=@user.name %>さんとのチャット</h1>
+    2: <div class='message'>
+    3: <%= render "messages", chats: @chats %>
+    4: </div>
+    5: <%= form_with model: @chat, remote: true do |f| %>
+    6: <%= f.text_field :message %>
+  
+app/views/chats/show.html.erb:3:in `_app_views_chats_show_html_erb__1611335002674720134_69818452139140'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:19:49 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (2.7ms)
+  Rendered chats/show.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 142ms (Views: 95.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:19:52 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tqCIWjynXgAH_stnk7uiFBc5qWnqZCBq7Glm-0fwIk6opIkIQTDz2R1NFn9Q9zSEwGu3zHFGae_4NPM7IQOKKA", "chat"=>{"message"=>"a", "room_id"=>"4"}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mChat Create (0.9ms)[0m  [1m[32mINSERT INTO "chats" ("user_id", "message", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["message", "a"], ["created_at", "2021-11-19 16:19:52.876143"], ["updated_at", "2021-11-19 16:19:52.876143"], ["room_id", 4]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (11.1ms)
+  Rendered chats/create.js.erb (14.9ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___3710307094469724945_69818633423880'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__2650792218327551660_69818633364960'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:19:59 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (2.8ms)
+  Rendered chats/show.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 121ms (Views: 100.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:20:21 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (3.2ms)
+  Rendered chats/show.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 105ms (Views: 92.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:20:25 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bCxZ0io5FW6EQuxnX7_y4zTrLvMWzXDhbxUVQenv-RNyKFiAV664t57xMX-c82Rz47kwVo3vOWR7SICBjxxRdQ", "chat"=>{"message"=>"o", "room_id"=>"4"}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mChat Create (1.5ms)[0m  [1m[32mINSERT INTO "chats" ("user_id", "message", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["message", "o"], ["created_at", "2021-11-19 16:20:25.260276"], ["updated_at", "2021-11-19 16:20:25.260276"], ["room_id", 4]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (8.4ms)
+  Rendered chats/create.js.erb (11.8ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___3710307094469724945_69818640283620'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__2650792218327551660_69818640251100'
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:22:02 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bCxZ0io5FW6EQuxnX7_y4zTrLvMWzXDhbxUVQenv-RNyKFiAV664t57xMX-c82Rz47kwVo3vOWR7SICBjxxRdQ", "chat"=>{"message"=>"o", "room_id"=>"4"}, "commit"=>"SEND"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mChat Create (1.4ms)[0m  [1m[32mINSERT INTO "chats" ("user_id", "message", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["message", "o"], ["created_at", "2021-11-19 16:22:02.061274"], ["updated_at", "2021-11-19 16:22:02.061274"], ["room_id", 4]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  Rendered chats/_message.html.erb (3.8ms)
+  Rendered chats/create.js.erb (7.4ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% chats.each do |chat| %>
+    2: <p><%= chat.message %></p>
+    3: <% end %>
+  
+app/views/chats/_message.html.erb:1:in `_app_views_chats__message_html_erb___3710307094469724945_69818634593740'
+app/views/chats/create.js.erb:1:in `_app_views_chats_create_js_erb__2650792218327551660_69818634552000'
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:22:06 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (3.3ms)
+  Rendered chats/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 112ms (Views: 101.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chats/4" for 58.93.235.150 at 2021-11-19 16:22:45 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "user_rooms"."room_id" FROM "user_rooms" WHERE "user_rooms"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/chats_controller.rb:4
+  [1m[36mUserRoom Load (0.2ms)[0m  [1m[34mSELECT  "user_rooms".* FROM "user_rooms" WHERE "user_rooms"."user_id" = ? AND "user_rooms"."room_id" IN (?, ?, ?, ?) LIMIT ?[0m  [["user_id", 4], ["room_id", 1], ["room_id", 2], ["room_id", 3], ["room_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:5
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:12
+  Rendering chats/show.html.erb within layouts/application
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (6.9ms)
+  Rendered chats/show.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_search.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 164ms (Views: 145.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/chats" for 58.93.235.150 at 2021-11-19 16:22:49 +0000
+Cannot render console from 58.93.235.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChatsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EFPJwEwQgB8hSx6oHyFoIRIN27MrtIQMHfLLJFoY2XcOV8iSMYctxjv4w7Dcbf6xxV_FFrCWzYkJr17kPOtxEQ", "chat"=>{"message"=>"p", "room_id"=>"4"}, "commit"=>"SEND"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[36mChat Create (1.3ms)[0m  [1m[32mINSERT INTO "chats" ("user_id", "message", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["message", "p"], ["created_at", "2021-11-19 16:22:49.292651"], ["updated_at", "2021-11-19 16:22:49.292651"], ["room_id", 4]]
+  ↳ app/controllers/chats_controller.rb:20
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chats_controller.rb:20
+  Rendering chats/create.js.erb
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."room_id" = ?[0m  [["room_id", 4]]
+  ↳ app/views/chats/_message.html.erb:1
+  Rendered chats/_message.html.erb (2.7ms)
+  Rendered chats/create.js.erb (7.6ms)
+Completed 200 OK in 32ms (Views: 14.4ms | ActiveRecord: 7.1ms)
+
+

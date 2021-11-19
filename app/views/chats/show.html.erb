@@ -1,0 +1,9 @@
+<h1><%=@user.name %>さんとのチャット</h1>
+<div class='message'>
+<%= render "message", chats: @chats %>
+</div>
+<%= form_with model: @chat, remote: true do |f| %>
+<%= f.text_field :message %>
+<%= f.hidden_field :room_id, :value => @room.id %>
+<%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
+<% end %>
